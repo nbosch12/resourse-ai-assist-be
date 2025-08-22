@@ -22,7 +22,7 @@ public class ResourceAiAssistController {
     public String hello() {
         String[] responses = {
             "Hey team — backend is live and blazing! 🚀",
-            "Hello world! Our API engine is humming—game on! ⚙️✨",
+            "Hello world! Our API engine is humming—game on! on! ⚙️✨",
             "Good news, folks: servers up, endpoints firing—let’s roll! 🔥",
             "Hi squad — backend’s online and purring. 🐾",
             "Namaste team — backend green across the board! ✅",
