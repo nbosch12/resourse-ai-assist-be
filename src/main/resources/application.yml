@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ResourceAIAssist
+  datasource:
+    url: jdbc:sap://e10c26e8-9466-471b-a7d9-0f704749fd96.hna1.prod-eu10.hanacloud.ondemand.com:443/?encrypt=true&validateCertificate=true&currentschema=USR_8WG7TJYUKSBDZJHA826DB8HA4
+    username: USR_8WG7TJYUKSBDZJHA826DB8HA4
+    password: Vz16fpp4UHZLUmhSo-5nXwdmBI6CBzUOQu6PHoJHFE.dm-6RlHM9Cx_ReQ.BMLdTlhC6caJxR3VzpeoGVw2mjIHouzMX3uO5ZdKsDO-V5VZwbLGJ0xYp75DKk5qE8EW9
+    driver-class-name: com.sap.db.jdbc.Driver
+    jpa:
+      hibernate:
+        ddl-auto: none
+      properties:
+        hibernate.dialect: org.hibernate.dialect.HANARowStoreDialect
