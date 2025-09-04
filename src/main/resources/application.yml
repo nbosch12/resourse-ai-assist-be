@@ -1,13 +1,37 @@
 spring:
   application:
     name: ResourceAIAssist
+
   datasource:
     url: jdbc:sap://e10c26e8-9466-471b-a7d9-0f704749fd96.hna1.prod-eu10.hanacloud.ondemand.com:443/?encrypt=true&validateCertificate=true&currentschema=USR_8WG7TJYUKSBDZJHA826DB8HA4
     username: USR_8WG7TJYUKSBDZJHA826DB8HA4
     password: Vz16fpp4UHZLUmhSo-5nXwdmBI6CBzUOQu6PHoJHFE.dm-6RlHM9Cx_ReQ.BMLdTlhC6caJxR3VzpeoGVw2mjIHouzMX3uO5ZdKsDO-V5VZwbLGJ0xYp75DKk5qE8EW9
     driver-class-name: com.sap.db.jdbc.Driver
-    jpa:
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
       hibernate:
-        ddl-auto: none
-      properties:
-        hibernate.dialect: org.hibernate.dialect.HANARowStoreDialect
+        dialect: org.hibernate.dialect.HANARowStoreDialect
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 0
+
+# Optional Tomcat knobs (large form bodies)
+server:
+  tomcat:
+    max-http-form-post-size: -1     # no limit
+    max-swallow-size: -1            # allow large multipart
+
+# NOTE: your binder expects 'objectstore', not 'object-store'
+objectstore:
+  bucket: hcp-fa18bbe1-8bfc-462d-8264-b2ce6bae3c03
+  endpoint: https://s3-eu-central-1.amazonaws.com
+  region: eu-central-1
+  write-access-key: 'AKIA4S6QTN3S6BKOLUVF'
+  write-secret-key: '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'
