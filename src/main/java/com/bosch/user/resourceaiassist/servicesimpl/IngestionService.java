@@ -25,7 +25,13 @@ public class IngestionService {
     public String ingestFromObject(String bucket, String objectKey, String versionId,
                                    String filename, String mimeType, long sizeBytes) {
         try {
-            byte[] pdf = s3.getObject(GetObjectRequest.builder().bucket(bucket).key(objectKey).build()).readAllBytes();
+
+            var req = GetObjectRequest.builder()
+                    .bucket(bucket)
+                    .key(objectKey)
+                    .versionId(versionId)   // <-- important
+                    .build();
+            byte[] pdf = s3.getObject(req).readAllBytes();
 
             String docId = UUID.randomUUID().toString().replace("-", "");
             String sha = sha256Hex(pdf);
