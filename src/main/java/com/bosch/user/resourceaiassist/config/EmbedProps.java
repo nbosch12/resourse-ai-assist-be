@@ -1,7 +1,9 @@
 package com.bosch.user.resourceaiassist.config;
 
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
+@ConfigurationProperties(prefix = "embed")
 @Data
 public class EmbedProps {
     private String provider;
@@ -13,4 +15,7 @@ public class EmbedProps {
     private String clientSecret;
     private String deploymentId;
     private String resourceGroup;
+    private String embeddingsDeploymentId;
+    private String chatDeploymentId;
+    private String apiVersion;
 }

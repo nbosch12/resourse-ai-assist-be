@@ -12,10 +12,8 @@ import software.amazon.awssdk.services.s3.*;
 import java.net.URI;
 
 @Configuration
-@EnableConfigurationProperties(ObjectStorePropsEmbedding.class)
+@EnableConfigurationProperties({ObjectStorePropsEmbedding.class})
 public class AppConfig {
-    @Bean @ConfigurationProperties(prefix = "embed")
-    public EmbedProps embedProps() { return new EmbedProps(); }
 
     @Bean("s3Read")
     S3Client s3Read(ObjectStorePropsEmbedding p) {
