@@ -35,3 +35,37 @@ objectstore:
   region: eu-central-1
   write-access-key: 'AKIA4S6QTN3S6BKOLUVF'
   write-secret-key: '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'
+
+object-store:
+  bucket: hcp-fa18bbe1-8bfc-462d-8264-b2ce6bae3c03
+  endpoint: https://s3-eu-central-1.amazonaws.com
+  region: eu-central-1
+  sse: AES256
+  read-access-key: 'AKIA4S6QTN3S7XYGNYFO'
+  read-secret-key: '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'
+
+# -------- Embeddings via SAP AI Core --------
+embed:
+  provider: aicore
+  dim: 3072
+  timeoutMs: 10000
+  apiBase: https://api.ai.prod.eu-central-1.aws.ml.hana.ondemand.com
+  tokenUrl: https://rb-hackathon-25-d.authentication.eu10.hana.ondemand.com/oauth/token
+  clientId: sb-341300d2-68ad-4d30-9289-05e1a7f73431!b578403|aicore!b540
+  clientSecret: 278f9ae7-e22b-49da-a1e8-16c5c2647b95$YbZEtoLMJ82TqcHrmnM3C2pP27H0dtrjpHcQ8YzkogA=
+  deploymentId: d83b1ea0ce7f27ad
+  embeddingsDeploymentId: d83b1ea0ce7f27ad
+  chatDeploymentId: d52147307e57dd79
+  apiVersion: 2023-05-15
+  resourceGroup: Resource-Ai-Assist
+
+
+rag:
+  topK: 12
+  maxContextChars: 12000
+
+logging:
+  level:
+    root: INFO
+    com.bosch.user.resourceaiassist: INFO
+    org.springframework.jdbc.core: INFO
